@@ -16,7 +16,7 @@ func (s *Server) ServeHTTP() {
 	e := echo.New()
 
 	// Middlewares
-	loadMiddlewares(e)
+	loadMiddleware(e)
 
 	// Routes
 	loadRoutes(e)
