@@ -2,7 +2,6 @@ package server
 
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 )
 
 // Server handles evaluation requests
@@ -16,12 +15,11 @@ func NewServer() *Server {
 func (s *Server) ServeHTTP() {
 	e := echo.New()
 
-	// Middleware
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
+	// Middlewares
+	loadMiddlewares(e)
 
 	// Routes
-	initialyzeRoutes(e)
+	loadRoutes(e)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":8888"))
