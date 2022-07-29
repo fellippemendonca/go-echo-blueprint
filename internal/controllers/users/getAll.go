@@ -7,7 +7,6 @@ import (
 )
 
 // e.GET("/users/:id", getUser)
-func GetUser(c echo.Context) error {
-	id := c.Param("id")
-	return c.String(http.StatusOK, id)
+func GetAll(c echo.Context) error {
+	return c.String(http.StatusOK, "all")
 }

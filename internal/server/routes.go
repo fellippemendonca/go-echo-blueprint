@@ -1,14 +1,15 @@
 package server
 
 import (
-	controllers "go-echo-blueprint/internal/controllers/users"
+	users "go-echo-blueprint/internal/controllers/users"
 
 	"github.com/labstack/echo/v4"
 )
 
 func loadRoutes(e *echo.Echo) {
-	e.POST("/users", controllers.CreateUser)
-	e.GET("/users/:id", controllers.GetUser)
-	e.PUT("/users/:id", controllers.UpdateUser)
-	e.DELETE("/users/:id", controllers.DeleteUser)
+	e.POST("/users", users.Create)
+	e.GET("/users", users.GetAll)
+	e.GET("/users/:id", users.GetOne)
+	e.PUT("/users/:id", users.Update)
+	e.DELETE("/users/:id", users.Delete)
 }

@@ -7,7 +7,7 @@ import (
 )
 
 // e.PUT("/users", putUser)
-func UpdateUser(c echo.Context) error {
+func Update(c echo.Context) error {
 	u := new(User)
 	if err := c.Bind(u); err != nil {
 		return err
