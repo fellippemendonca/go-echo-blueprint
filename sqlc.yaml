@@ -8,7 +8,6 @@ packages:
     schema: sql/migrations/
     queries:
       - sql/queries/users/
-      - sql/queries/users_tasks/
     engine: postgresql
     sql_package: database/sql
     emit_prepared_queries: true
